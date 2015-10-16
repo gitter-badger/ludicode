@@ -1,0 +1,48 @@
+The following list of messages contains all messages in the order they usually appear during a conversation between a ludicode client and a ludicode server.
+
+All messages are either JSON-RPC requests or JSON-RPC responses. All Messages contain the Message-ID and the message text in human readable form. The messages MUST only be identified by their IDs. The human readable Text MAY be in another language than English, but SHOULD end in either a '?' or a '!' depending on whether the message is a request or a response.
+
+The encoding used for all messages MUST be UTF-8
+
+
+| Message-ID | Client          | Server              | Parameter                |
+|------------+-----------------+---------------------+--------------------------|
+|          0 | Hello?          |                     | -                        |
+|          1 |                 | Hello!              | Version                  |
+|            |                 |                     |                          |
+|          2 | Games?          |                     | -                        |
+|          3 |                 | Games!              | List of Games            |
+|        404 |                 | NoGames!            |                          |
+|            |                 |                     |                          |
+|          4 | Rules?          |                     | NameOfGame               |
+|          5 |                 | Rules!              | RulesText                |
+|            |                 |                     | PreferredPollrate        |
+|            |                 |                     | SoftTimeout              |
+|            |                 |                     | HardTimeOut              |
+|            |                 |                     |                          |
+|            |                 |                     |                          |
+|            | RegisterPlayer? |                     | PlayerID                 |
+|            |                 |                     | (PublicKey)              |
+|            |                 | PlayerRegistered!   |                          |
+|            |                 | PlayerRejected!     | AlreadyPresent           |
+|            |                 |                     |                          |
+|          8 | StartGame?      |                     | NameOfGame               |
+|          9 |                 | GameStarted!        | MatchNumber              |
+|            |                 |                     | PreferredPollrate        |
+|        405 |                 | GameNotStarted!     |                          |
+|            |                 |                     |                          |
+|         99 | StopGame?       |                     | MatchNumber              |
+|            |                 | KThxBye!            | MatchNumber              |
+|            |                 |                     |                          |
+|         23 | MatchInfo?      | MatchInfo!          | NumberOfPlayers          |
+|            |                 |                     | ListOfPlayers            |
+|            |                 |                     |                          |
+|         42 | MatchStatus?    |                     | MatchNumber              |
+|            |                 | WaitingForPartners! | NumberOfMissingPartners  |
+|            |                 |                     | NumberOfPossiblePartners |
+|            |                 | PartnerTimedOut!    | Partnernumber            |
+|            |                 | PartnerLeftGame!    | PartnerNumber            |
+|            |                 | PartnersTurn!       | PartnerNumber            |
+|            |                 |                     |                          |
+|            |                 | YourTurn!           |                          |
+|            |                 | MatchOver!          |                          |

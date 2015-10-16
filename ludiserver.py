@@ -15,11 +15,12 @@ def cube(x):
 
 @app.route('/api', methods=['POST'])
 def index():
+    print('request')
     r = dispatch([square, cube], request.get_data().decode('utf-8'))
+    print(r.body)
     return Response(r.body, r.http_status, mimetype='application/json')
 
 if __name__ == '__main__':
-    app.port(9277)
+    
     app.run()
 
-# curl -i -X GET -H 'Content-Type: application/json' -d '{"jsonrpc": "2.0", "method": "cube", "params": {"x":3}, "id":5}' http://127.0.0.1:5000/api

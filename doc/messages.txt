@@ -1,8 +1,8 @@
 The following list of messages contains all messages in the order they usually appear during a conversation between a ludicode client and a ludicode server.
 
-All messages are either JSON-RPC requests or JSON-RPC responses. All Messages contain the Message-ID and the message text in human readable form. The messages MUST only be identified by their IDs. The human readable Text MAY be in another language than English, but SHOULD end in either a '?' or a '!' depending on whether the message is a request or a response.
+All messages are either JSON-RPC requests or JSON-RPC responses. All messages contain the message-ID and the message text in human readable form. The messages *MUST* only be identified by their IDs. The human readable Text *MAY* be in another language than English, but *SHOULD* end in either a '?' or a '!' depending on whether the message is a request or a response.
 
-The encoding used for all messages MUST be UTF-8
+The encoding used for all messages *MUST* be UTF-8
 
 
 | Message-ID | Client          | Server              | Parameter                |

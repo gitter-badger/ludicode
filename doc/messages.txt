@@ -21,13 +21,13 @@ The encoding used for all messages *MUST* be UTF-8
 |            |                 |                     | HardTimeOut              |
 |            |                 |                     |                          |
 |            |                 |                     |                          |
-|            | RegisterPlayer? |                     | PlayerID                 |
+|          6 | RegisterPlayer? |                     | PlayerID                 |
 |            |                 |                     | (PublicKey)              |
-|            |                 | PlayerRegistered!   |                          |
-|            |                 | PlayerRejected!     | AlreadyPresent           |
+|          7 |                 | PlayerRegistered!   |                          |
+|          8 |                 | PlayerRejected!     | AlreadyPresent           |
 |            |                 |                     |                          |
-|          8 | StartGame?      |                     | NameOfGame               |
-|          9 |                 | GameStarted!        | MatchNumber              |
+|          9 | StartGame?      |                     | NameOfGame               |
+|         10 |                 | GameStarted!        | MatchNumber              |
 |            |                 |                     | PreferredPollrate        |
 |        405 |                 | GameNotStarted!     |                          |
 |            |                 |                     |                          |

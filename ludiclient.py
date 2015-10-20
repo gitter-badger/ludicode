@@ -36,7 +36,7 @@ class LudiClient(LudiCore):
             self.config.write(configfile)
 
     def connectToServer(self):
-        print("Connecting to Server... ",end='')
+        print("Connecting to Server... " , end = '')
         result = self.server.request('ludicode', self.sendMessage(0))
         if (result[0] == 1):
             print("Ok")
